@@ -2,7 +2,7 @@
 #define ledG 4
 #define ledB 3
 #define botao 7
-#define maximo 3 //total de cores que serão configuradas
+#define maximo 6 //total de cores que serão configuradas
 
 int btnclicado=0;
 int btnliberado=0;
@@ -26,6 +26,24 @@ void azul(){
   digitalWrite(ledG, LOW);
   digitalWrite(ledB, HIGH);
 }
+void amarelo(){
+  //defini os estados do pino amarelo
+  analogWrite(ledR, 255);
+  analogWrite(ledG, 255);
+  analogWrite(ledB, 0);
+}
+void ciano(){
+  //defini os estados do pino ciano
+  analogWrite(ledR, 0);
+  analogWrite(ledG, 255);
+  analogWrite(ledB, 255);
+}
+void magento(){
+  //defini os estados do pino ciano
+  analogWrite(ledR, 255);
+  analogWrite(ledG, 0);
+  analogWrite(ledB, 255);
+}
 
 void trocaLed(){
   if(ciclo==0){
@@ -34,6 +52,12 @@ void trocaLed(){
     verde();
   }else if(ciclo==2){
     azul();
+  }else if(ciclo==3){
+    amarelo();
+  }else if(ciclo==4){
+    ciano();
+  }else if(ciclo==5){
+    magento();
   }
   ciclo++;
   if(ciclo>maximo-1){ //ciclo comeca em 0
