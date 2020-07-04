@@ -2,7 +2,7 @@
 //pwm retorna ou recebe um valor de 8 bits
 #define led 3
 #define maximo 16
-#define minino 0
+#define minimo 0
 #define tmp 100
 void setup() {
   pinMode(led,OUTPUT);
